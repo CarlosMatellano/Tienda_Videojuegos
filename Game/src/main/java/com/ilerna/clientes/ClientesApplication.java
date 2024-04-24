@@ -1,13 +1,13 @@
-package com.mycompany.game;
+package com.ilerna.clientes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Game {
+public class ClientesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Game.class, args);
+		SpringApplication.run(ClientesApplication.class, args);
 	}
 
 }
