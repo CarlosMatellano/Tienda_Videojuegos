@@ -22,14 +22,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ControllerGame {
     GestorGame gg = new GestorGame();
     @GetMapping("/")
-    public void crud(Model model){
-        System.out.println("HOla");
-//        try {
-//            model.addAttribute("juego", gg.listar());
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ControllerGame.class.getName()).log(Level.SEVERE, null, ex);
-//            ex.getMessage();
-//            valorfinal="error";
-//        }
+    public String crud(Model model){
+        String valorfinal="./game/listargameold";
+        try {
+            model.addAttribute("juego", gg.listar());
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerGame.class.getName()).log(Level.SEVERE, null, ex);
+            ex.getMessage();
+            valorfinal="error";
+        }
+        return valorfinal;
     }    
 }

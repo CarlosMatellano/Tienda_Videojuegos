@@ -81,5 +81,15 @@ public class Juego {
         this.unidades = unidades;
     }
     
-    
+    @Override
+    public String toString() {
+
+        return String.format("%-4d %-20s %-20s %-15s %-25s %-35s",
+                id,
+                nombre,
+                categoria,
+                precio,
+                pegi,
+                unidades);
+    }    
 }

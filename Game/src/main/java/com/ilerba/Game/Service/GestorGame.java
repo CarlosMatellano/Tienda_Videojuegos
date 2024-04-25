@@ -26,7 +26,7 @@ public class GestorGame {
         while (rs.next()) {
             Juego j = new Juego(
                     rs.getInt("id"),
-                    rs.getString("nombre"),
+                    rs.getString("nombre_juego"),
                     rs.getString("categoria"),
                     rs.getDouble("precio"),
                     rs.getString("pegi"),
