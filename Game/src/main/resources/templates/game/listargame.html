@@ -18,7 +18,7 @@
 </head>
 <body class="container">
     <div class="d-flex justify-content-center align-items-center">
-        <h1>Clientes</h1>
+        <h1>Juegos</h1>
     </div>
     <div class="d-flex justify-content-center align-items-center">
 
@@ -32,27 +32,29 @@
                     <th colspan = "1" >Accion</th>
                     <!--    <th>id</th> -->
                     <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Telfono</th>
-                    <th>Correo</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Pegi</th>
+                    <th>Unidades</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="cliente : ${clientes}">
-                    <td class="align-middle">
-                        <a class="text-decoration-none mx-1" th:href="@{./eliminar?codcliente={id}(id=${cliente.id})}">
+                <tr th:each="juego : ${juego}">
+<!--                    <td class="align-middle">
+                        <a class="text-decoration-none mx-1" th:href="@{./eliminar?codcliente={id}(id=${juego.id})}">
                             <img src="/img/delete-bin-line.png" alt="Eliminar">
                         </a>
-                        <a class="text-decoration-none mx-1" th:href="@{./modificar?codcliente={id}(id=${cliente.id})}">
+                        <a class="text-decoration-none mx-1" th:href="@{./modificar?codcliente={id}(id=${juego.id})}">
                             <img src="/img/file-edit-line.png" alt="Modificar">
                         </a>
-                    </td>
+                    </td>-->
     
                     <!-- <td th:text="${cliente.id}"></td> -->
-                    <td th:text="${cliente.nombre}"></td>
-                    <td th:text="${cliente.apellido}"></td>
-                    <td th:text="${cliente.telefono}"></td>
-                    <td th:text="${cliente.correo}"></td>
+                    <td th:text="${juego.nombre}"></td>
+                    <td th:text="${juego.categoria}"></td>
+                    <td th:text="${juego.precio}"></td>
+                    <td th:text="${juego.pegi}"></td>
+                    <td th:text="${juego.unidades}"></td>
                 </tr>
                 </tbody>
             </table>
@@ -74,4 +76,3 @@
     </script>
     <!-- Seleccionar el elemento en foco por defecto -->
 </body>
-

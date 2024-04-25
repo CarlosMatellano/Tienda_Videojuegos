@@ -1,10 +1,15 @@
-package com.ilerna.clientes.database;
+package com.ilerba.Game.Database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author Alumno
+ */
 public class Conexion {
-    String url = "jdbc:mysql://localhost:3306/dbclientes";
+    String url = "jdbc:mysql://localhost:3306/bdgame";
     String user = "root";
     String pass = "";
     Connection c;
@@ -13,4 +18,5 @@ public class Conexion {
         c = DriverManager.getConnection(url, user, pass);
         return c;
     }
-}
+}    
+
