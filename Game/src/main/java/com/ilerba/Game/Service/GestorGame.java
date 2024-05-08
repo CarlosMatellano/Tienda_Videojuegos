@@ -18,6 +18,24 @@ import java.util.List;
  */
 public class GestorGame {
     Conexion c = new Conexion();
+    
+    public void alta(Juego j) throws SQLException {
+        Statement consulta = c.conectar().createStatement();
+        // Conversión de Date a String. tratamiento de la fecha para que sea aceptada por MySQL
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //String strFechaFormateada = sdf.format(p.getFechaNacimiento());
+        // estring de inserción
+        String cadena = "INSERT INTO almacen(nombre_juego, categoria, precio, pegi, unidades) VALUES ('"
+                + j.getNombre() + "','"
+                + j.getCategoria()+ "','"
+                + j.getPrecio() + "','"
+                + j.getPegi() + "','"
+                + j.getUnidades() + "');";
+        //System.out.println(cadena);
+        consulta.executeUpdate(cadena);
+        consulta.close();
+    }    
+    
     public List<Juego> listar() throws SQLException {
         Statement consulta = c.conectar().createStatement();
         ResultSet rs = consulta.executeQuery("SELECT * FROM almacen");
@@ -29,7 +47,7 @@ public class GestorGame {
                     rs.getString("nombre_juego"),
                     rs.getString("categoria"),
                     rs.getDouble("precio"),
-                    rs.getString("pegi"),
+                    rs.getInt("pegi"),
                     rs.getInt("unidades")
             );
             lista.add(j);

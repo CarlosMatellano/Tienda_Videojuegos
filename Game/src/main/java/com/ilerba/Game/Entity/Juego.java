@@ -13,10 +13,13 @@ public class Juego {
     private String nombre;
     private String categoria;
     private Double precio;
-    private String pegi;
+    private int pegi;
     private int unidades;
 
-    public Juego(String nombre, String categoria, Double precio, String pegi, int unidades) {
+    public Juego() {
+    }
+    
+    public Juego(String nombre, String categoria, Double precio, int pegi, int unidades) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
@@ -24,7 +27,7 @@ public class Juego {
         this.unidades = unidades;
     }
 
-    public Juego(int id, String nombre, String categoria, Double precio, String pegi, int unidades) {
+    public Juego(int id, String nombre, String categoria, Double precio, int pegi, int unidades) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -65,11 +68,11 @@ public class Juego {
         this.precio = precio;
     }
 
-    public String getPegi() {
+    public int getPegi() {
         return pegi;
     }
 
-    public void setPegi(String pegi) {
+    public void setPegi(int pegi) {
         this.pegi = pegi;
     }
 
