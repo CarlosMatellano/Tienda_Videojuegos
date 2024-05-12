@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de juegos.</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Compra de juegos.</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="categoria">Categoría:</label>
+              <input type="text" class="form-control" id="categoria" name="categoria" required>
+            </div>
+            <div class="form-group">
+              <label for="precio">Precio:</label>
+              <input type="number" class="form-control" id="precio" name="precio" required>
+            </div>
+            <div class="form-group">
+              <label for="peg">PEGI:</label>
+              <select class="form-control" id="peg" name="peg">
+                <option value="3">3</option>
+                <option value="7">7</option>
+                <option value="12">12</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-danger">Comprar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

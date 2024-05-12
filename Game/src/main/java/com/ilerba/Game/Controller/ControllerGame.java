@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -59,6 +60,24 @@ public class ControllerGame {
         } catch (SQLException ex) {
             valorfinal = "error";
         }
+        return valorfinal;
+    }
+
+   @PostMapping("/eliminar")
+    public String eliminarJuego(@RequestParam("id") int id, Model model) {
+        String valorfinal = "redirect:/game/"; // Redirige por defecto a la página de juegos
+
+        try {
+            // Llama al método de eliminación del servicio de juegos (gg)
+            gg.baja(id);
+            
+            // Si la eliminación fue exitosa, vuelve a cargar la lista de juegos
+            model.addAttribute("juego", gg.listar());
+        } catch (SQLException ex) {
+            // En caso de error, redirige a la página de error
+            valorfinal = "error";
+        }
+
         return valorfinal;
     }
 }

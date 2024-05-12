@@ -8,10 +8,10 @@
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Bootstrap CSS v5.2.1 -->
     <style type="text/css">
-        span { 
-        display: inline-block; 
-        width: 200px; 
-        text-align: left; 
+        span {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
         }
     </style>
 
@@ -29,6 +29,7 @@
             <table class="table table-striped">
                 <thead>
                 <tr class="text-left">
+                    <th>Accion</th>
                     <!--    <th>id</th> -->
                     <th>Nombre</th>
                     <th>Categoría</th>
@@ -39,16 +40,12 @@
                 </thead>
                 <tbody>
                 <tr th:each="juego : ${juego}">
-<!--                    <td class="align-middle">
-                        <a class="text-decoration-none mx-1" th:href="@{./eliminar?codcliente={id}(id=${juego.id})}">
-                            <img src="/img/delete-bin-line.png" alt="Eliminar">
-                        </a>
-                        <a class="text-decoration-none mx-1" th:href="@{./modificar?codcliente={id}(id=${juego.id})}">
-                            <img src="/img/file-edit-line.png" alt="Modificar">
-                        </a>
-                    </td>-->
-    
-                    <!-- <td th:text="${cliente.id}"></td> -->
+                    <td class="align-middle">
+                        <button class="btn btn-danger delete-btn" data-id="${juego.id}" data-unidades="${juego.unidades}">
+                            Eliminar
+                        </button>
+                    </td>
+
                     <td th:text="${juego.nombre}"></td>
                     <td th:text="${juego.categoria}"></td>
                     <td th:text="${juego.precio}"></td>
@@ -68,10 +65,29 @@
             integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
     <!-- Seleccionar el elemento en foco por defecto -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!--hay q modificar el script-->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        $(document).ready(function () {
+            $('.delete-btn').on('click', function () {
+                var id = $(this).data('id');
+                var unidades = $(this).data('unidades');
+                var unidadesSeleccionadas = prompt('Selecciona las unidades que deseas eliminar:', unidades);
+
+                if (unidadesSeleccionadas !== null && unidadesSeleccionadas !== '') {
+                    // Envía la solicitud al servidor para eliminar las unidades seleccionadas
+                    // Aquí deberías hacer una llamada AJAX al servidor para manejar la eliminación
+                    console.log('Eliminar unidades ' + unidadesSeleccionadas + ' del juego con ID ' + id);
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("filtro").focus();
         });
     </script>
     <!-- Seleccionar el elemento en foco por defecto -->
 </body>
+</html>

@@ -4,30 +4,29 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <table>
-     <tr th:each="juego : ${juego}">
-<!--                    <td class="align-middle">
-                        <a class="text-decoration-none mx-1" th:href="@{./eliminar?codcliente={id}(id=${juego.id})}">
-                            <img src="/img/delete-bin-line.png" alt="Eliminar">
-                        </a>
-                        <a class="text-decoration-none mx-1" th:href="@{./modificar?codcliente={id}(id=${juego.id})}">
-                            <img src="/img/file-edit-line.png" alt="Modificar">
-                        </a>
-                    </td>-->
-    
-                    <!-- <td th:text="${cliente.id}"></td> -->
-                    <td th:text="${juego.nombre}"></td>
-                    <td th:text="${juego.categoria}"></td>
-                    <td th:text="${juego.precio}"></td>
-                    <td th:text="${juego.pegi}"></td>
-                    <td th:text="${juego.unidades}"></td>
-                </tr>
-        </table>
-    </body>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <table>
+        <tr th:each="juego : ${juego}">
+            <td class="align-middle">
+                <a class="text-decoration-none mx-1" th:href="@{./eliminar?codjuego={id}(id=${juego.id})}">
+                    <img src="/src/main/resources/static/img/carrito.png" alt="Compra         ">
+                </a>
+                <a class="text-decoration-none mx-1" th:href="@{./modificar?codjuego={id}(id=${juego.id})}">
+                    <img src="/src/main/resources/static/file-edit-line.png" alt="Modificar">
+                </a>
+            </td>
+
+            <td th:text="${juego.nombre}"></td>
+            <td th:text="${juego.categoria}"></td>
+            <td th:text="${juego.precio}"></td>
+            <td th:text="${juego.pegi}"></td>
+            <td th:text="${juego.unidades}"></td>
+        </tr>
+    </table>
+</body>
 </html>
