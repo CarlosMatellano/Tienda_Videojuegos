@@ -42,7 +42,7 @@ public class ControllerGame {
     @GetMapping("/alta")
     public String greetingForm(Model model) {
         model.addAttribute("juego", new Juego());
-        return "./game/altagame";
+        return "./game/altajuego";
     }
 
     @PostMapping("/alta")
